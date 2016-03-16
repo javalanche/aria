@@ -1,0 +1,50 @@
+div.guess { 
+  border: thick double black; 
+  padding: 1em; 
+  width: 65%; 
+  font-family: Arial, Helvetica, sans-serif; 
+} 
+
+div.guess h2 { 
+  margin: 0; 
+  padding: 0; 
+  text-align: center; 
+  margin-left: 1em; 
+  margin-right: 1em; 
+} 
+
+div.guess input { 
+  font-size: 100%; 
+} 
+
+div.guess p.input { 
+  margin: 0; 
+  padding: 0; 
+  font-size: 150%; 
+  margin-top: .5em; 
+  margin-bottom: .5em; 
+  text-align: center; 
+  margin-left: 1em; 
+  margin-right: 1em; 
+} 
+
+div.guess input.button { 
+  margin: 0; 
+  padding: 0; 
+  display: inline; 
+  padding-left: .5em; 
+  padding-right: .5em; 
+  padding-top: .25em; 
+  padding-bottom: .25em; 
+} 
+
+
+div.guess p.feedback { 
+  margin: 0; 
+  padding: .25em; 
+  border: 2px solid black; 
+  text-align: center; 
+  margin-top: .5em; 
+  margin-bottom: .5em; 
+  font-weight: bold; 
+} 
