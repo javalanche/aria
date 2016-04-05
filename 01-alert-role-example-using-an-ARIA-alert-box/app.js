@@ -64,7 +64,7 @@ guess.prototype.newGame = function () {
   this.$check.removeAttr('disabled'); 
 
   // invite the user to make a guess 
-  this.$alert.text('Make a guess.'); 
+  this.$alert.text('this is the first alert on page load.'); 
 
   // set focus on the guest text box 
   this.$text.focus(); 
@@ -81,6 +81,7 @@ guess.prototype.bindHandlers = function () {
   var thisObj = this; // Store the this pointer 
 
   // bind a focus handler for the guess text box 
+  // this will simply select all the text when focused, good idea!
   this.$text.focus(function (e) { 
     thisObj.handleTextFocus(e); 
     return true; 
@@ -277,8 +278,8 @@ guess.prototype.validateGuess = function() {
 
   if (this.$text.val() == '') { 
     // guess is empty 
-    this.$text.attr('aria-invalid', 'true'); 
-    this.$alert.html('You must enter a number!'); 
+	this.$text.attr('aria-invalid', 'true'); // 'edit text invalid input'
+	this.$alert.html('this is placed in here when you leave the text box empty'); 
 
     return false; 
   } 

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title>this is the title</title>
+		<title>now I will say the title</title>
 	</head>
 	<body>
 		<div role="application"> 
@@ -19,13 +19,18 @@
 				</p> 
 
 				
+				<!--input box and label: guess1_text -->
 				<p class="input"> 
 				<label id="guess1_label" for="guess1_text">Guess a number between 1 and 10</label> 
-				<input type="text" id="guess1_text" size="3" aria-labelledby="guess1_label" aria-invalid="false"/> 
+				<!--aria-labelledby or label works the same not sure why they chose to use aria-labelledby -->
+				<!--<input type="text" id="guess1_text" size="3" aria-labelledby="guess1_label" aria-invalid="false"/> -->
+				<input type="text" id="guess1_text" size="3" label="guess1_label" aria-invalid="false"/> 
 				</p> 
 
+				<!--alert outlined box: guess1_alert -->
 				<p id="guess1_alert" role="alert" class="feedback"></p> 
 
+				<!--two buttons att the bottom: guess1_check, guess1_again -->
 				<p class="input">     
 				<input class="button" id="guess1_check" type="button" value="Check My Guess"/> 
 				<input class="button" id="guess1_again" type="button" value="Play Again"/> 
