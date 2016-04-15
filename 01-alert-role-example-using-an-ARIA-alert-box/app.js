@@ -28,6 +28,7 @@ function guess(min, max, text_id, check_id, again_id, alert_id) {
   this.$again = $('#' + again_id); // the jQuery object pointer to the play again button 
   this.$alert = $('#' + alert_id); // the jQuery object pointer to the alert area 
 
+  //TODO: find out why -1
   this.guessVal = -1;        // the number for the player to guess 
   this.guessCount = 0;       // the number of attempts the player has made 
 
@@ -57,7 +58,7 @@ guess.prototype.newGame = function () {
 
   // reset the guess text box 
   this.$text.val(''); 
-  this.$text.attr('aria-invalid', 'false'); 
+  this.$text.attr('aria-invalid', 'false'); // always for input elements
 
   // Re-enable the buttons 
   this.$text.removeAttr('disabled'); 
@@ -80,8 +81,8 @@ guess.prototype.bindHandlers = function () {
 
   var thisObj = this; // Store the this pointer 
 
+  // any time in input select all text for editing, good idea!
   // bind a focus handler for the guess text box 
-  // this will simply select all the text when focused, good idea!
   this.$text.focus(function (e) { 
     thisObj.handleTextFocus(e); 
     return true; 
@@ -279,7 +280,7 @@ guess.prototype.validateGuess = function() {
   if (this.$text.val() == '') { 
     // guess is empty 
 	this.$text.attr('aria-invalid', 'true'); // 'edit text invalid input'
-	this.$alert.html('this is placed in here when you leave the text box empty'); 
+	this.$alert.html('this is placed in here when you leave the text box empty, and set textbox to aria-invalid=true(default value, make sure you add this to any input element when not complete or not values you want)'); 
 
     return false; 
   } 
@@ -287,7 +288,7 @@ guess.prototype.validateGuess = function() {
 
     // guess is not a number 
     this.$text.attr('aria-invalid', 'true'); 
-    this.$alert.html('\'' + this.$text.val() + '\' is not a number!'); 
+    this.$alert.html('\'' + this.$text.val() + '\' is not a number! and set textbox to aria-invalid=true(default value, make sure you add this to any input element when not complete or not values you want)'); 
 
     return false; 
   } 
@@ -295,7 +296,7 @@ guess.prototype.validateGuess = function() {
 
     // guess is out of range 
     this.$text.attr('aria-invalid', 'true'); 
-    this.$alert.html('You must choose a number between ' + this.minGuess + ' and ' + this.maxGuess + '!'); 
+    this.$alert.html('You must choose a number between ' + this.minGuess + ' and ' + this.maxGuess + '!' + 'and set textbox to aria-invalid=true(default value, make sure you add this to any input element when not complete or not values you want)'); 
 
     return false; 
   } 
@@ -319,20 +320,20 @@ guess.prototype.checkGuess = function() {
     // The player has won. Tell the player how many tries it took 
 
     if (this.guessCount == 1) { 
-      this.$alert.html('\'' + guess + '\' is right. You got it on your first try!'); 
+      this.$alert.html('\'' + guess + '\' is right. You got it on your first try!' + ' and aria-invalid=false now in input which is required on all input elements'); 
     } 
     else { 
-      this.$alert.html('\'' + guess + '\' is right. It only took you ' + this.guessCount + ' tries!'); 
+      this.$alert.html('\'' + guess + '\' is right. It only took you ' + this.guessCount + ' tries!' + ' and aria-invalid=false now in input which is required on all input elements'); 
     } 
     return true; 
   } 
 
   // Player did not guess the correct number. Tell the player if he or she is too high or too low 
   if (guess < this.guessVal) { 
-    this.$alert.html('\'' + guess + '\' is too low. Try a higher number.'); 
+    this.$alert.html('\'' + guess + '\' is too low. Try a higher number.' + ' and aria-invalid=false now in input which is required on all input elements'); 
   } 
   else { 
-    this.$alert.html('\'' + guess + '\' is too high. Try a lower number.'); 
+    this.$alert.html('\'' + guess + '\' is too high. Try a lower number.' + ' and aria-invalid=false now in input which is required on all input elements'); 
   } 
 
   return false; 
