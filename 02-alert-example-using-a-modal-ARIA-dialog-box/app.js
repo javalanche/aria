@@ -21,7 +21,7 @@ function keyCodes () {
 // @param (game_id string) game_id is the id to attach the dialog to 
 // @return N/A 
 // 
-function alertDlg(alert_id, game_id) { 
+function alertDlg(alert_id, game_id) { // alert_id = alert1; game_id = guess1;
   var dlg = '<div id="' + alert_id + '" role="alertdialog" tabindex="-1" aria-hidden="true" aria-labelledby="' + 
     alert_id + '_title" aria-describedby="' + alert_id + '_message"><p id="' + alert_id + '_title" class="title">Alert Box</p><p id="' + 
     alert_id + '_message">No Message</p><input id="' + 
@@ -75,12 +75,12 @@ alertDlg.prototype.bindHandlers = function () {
 
   var thisObj = this; // store the this pointer 
 
-  // bind a keydown handler 
+  // bind a keydown handler, i.e. a button is pressed
   this.$dlg.keydown(function(e) { 
     return thisObj.handleDlgKeyDown(e); 
   }); 
 
-  // bind a keypress handler 
+  // bind a keypress handler, i.e. a character is typed
   this.$dlg.keypress(function(e) { 
     return thisObj.handleDlgKeyPress(e); 
   }); 
@@ -170,7 +170,7 @@ alertDlg.prototype.handleDlgKeyPress = function(evt) {
 // 
 alertDlg.prototype.handleCloseClick = function(evt) { 
 
-  if (evt.shiftKey || evt.ctrlKey || evt.AltKey) { 
+  if (evt.shiftKey || evt.ctrlKey || evt.AltKey) { // click and key pressed same time
     // do nothing 
     return true; 
   } 

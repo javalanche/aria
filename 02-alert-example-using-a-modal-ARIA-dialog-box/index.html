@@ -5,19 +5,31 @@
 		<h2>Number Guessing Game</h2> 
 
 		<p>
-		<strong>Instructions:</strong> In this game you guess a number between 1 an 10 and then press the "Check My Guess" button to check your responses.   
-		An <abbr title="Accessible Rich Internet Application">ARIA</abbr> dialog box will display the results of your guess.  To start over again to press the "Play Again" button.
+			<strong>Instructions:</strong> In this game you guess a number between 1 an 10 and then press the "Check My Guess" button to check your responses.   
+			An <abbr title="Accessible Rich Internet Application">ARIA</abbr> dialog box will display the results of your guess.  To start over again to press the "Play Again" button.
 		</p> 
 
 		<p class="input"> 
-		<label id="guess1_label" for="guess1_text">Guess a number between 1 and 10</label> 
-		<input type="text" id="guess1_text" size="3" aria-labelledby="guess1_label" aria-invalid="false"> 
+			<label id="guess1_label" for="guess1_text">Guess a number between 1 and 10</label> 
+			<!--
+				 -guess1_text = $text 
+				 -->
+			<input type="text" id="guess1_text" size="3" aria-labelledby="guess1_label" aria-invalid="false"> 
 		</p> 
 
 		<p class="input">     
-		<input class="button" id="guess1_check" type="button" value="Check My Guess"/> 
-		<input class="button" id="guess1_again" type="button" value="Play Again"/> 
+			<!--
+				 -guess1_check = $check 
+				 -->
+			<input class="button" id="guess1_check" type="button" value="Check My Guess"/> 
+			<!--
+				 -guess1_again = $again 
+				 -->
+			<input class="button" id="guess1_again" type="button" value="Play Again"/> 
 		</p> 
 	</div> 
 
 </div>
+<script type="text/javascript" src="http://www.oaa-accessibility.org/media/examples/js/jquery-1.4.2.min.js"></script>
+<script src="./app.js"></script>
+<link rel="stylesheet" href="./style.css" type="text/css" media="all">
